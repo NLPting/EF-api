@@ -18,7 +18,6 @@ with open('aes_score/model/efvocab.pkl', 'rb') as vocab_file:
 def read_sentence(line , vocab):
     data_x = []
     for word in line.lower().split(' '):
-        if word =='<num>':num_hit+=1
         if word in vocab:
             data_x.append(vocab[word])
         else:
