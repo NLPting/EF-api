@@ -4,10 +4,12 @@ import numpy as np
 from keras.preprocessing import sequence
 import keras.backend as K
 from keras.models import load_model
-config = tf.ConfigProto()
-config.gpu_options.allow_growth = True
-config.gpu_options.visible_device_list = "0"
-K.set_session(tf.Session(config=config))
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+#config = tf.ConfigProto()
+#config.gpu_options.allow_growth = True
+#config.gpu_options.visible_device_list = "0"
+#K.set_session(tf.Session(config=config))
 model = load_model('aes_score/model/best_model.h5')
 model.predict(np.zeros((1,350)))
 
