@@ -15,10 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from aes_score.views import aes_score
+from aes_score.views import aes_score , flair_dectect , flair_sen_dectect , linggle_call
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('aes', aes_score),
+    path('aes_dect',flair_dectect),
+    path('dect_sen',flair_sen_dectect),
+    path('linggle_call',linggle_call),
+    
+    #path('aes_dect',aes_dectect),
 ]
